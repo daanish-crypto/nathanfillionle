@@ -14,4 +14,9 @@ Go to [insert URL] and start typing to guess. Press enter to guess the word you 
 <img width="412" height="113" alt="image" src="https://github.com/user-attachments/assets/a545c500-a303-4464-b468-1afcb3953d44" />
 </p>
 
+---
+### DISCLAIMER
+NathanFillionle is an unofficial fan-made parody game.
+Not affiliated with or endorsed by Nathan Fillion.
 
+---
