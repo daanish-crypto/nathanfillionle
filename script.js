@@ -1,4 +1,23 @@
 const answer = "NATHANFILLION";
+const today = new Date().toISOString().slice(0, 10);
+
+// Already played today?
+if (localStorage.getItem("nathanfillionlePlayed") === today) {
+    document.body.innerHTML = `
+        <div style="
+            color:white;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:2rem;
+            text-align:center;
+        ">
+            You've already played today's NathanFillionle.
+        </div>
+    `;
+    throw new Error("Already played today");
+}
 
 let currentRow = 0;
 let currentCol = 0;
@@ -36,7 +55,6 @@ function handleKey(e) {
             );
 
             tile.textContent = e.key.toUpperCase();
-
             currentCol++;
         }
     }
@@ -76,11 +94,17 @@ function submitGuess() {
     scoreGuess(guess);
 
     if (guess === answer) {
+
         gameOver = true;
+
+        localStorage.setItem(
+            "nathanfillionlePlayed",
+            today
+        );
 
         setTimeout(() => {
             alert("You win!");
-        }, 300);
+        }, 200);
 
         return;
     }
@@ -92,9 +116,14 @@ function submitGuess() {
 
         gameOver = true;
 
+        localStorage.setItem(
+            "nathanfillionlePlayed",
+            today
+        );
+
         setTimeout(() => {
             alert(`Game Over! The answer was ${answer}`);
-        }, 300);
+        }, 200);
     }
 }
 
