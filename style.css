@@ -1,75 +1,94 @@
+/* main page */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background: #121213;
     color: white;
     font-family: Arial, sans-serif;
-
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 h1 {
     font-size: 5rem;
     font-weight: 900;
     margin-bottom: 50px;
 }
 
+/* guess board */
 #board {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 .row {
     display: flex;
     gap: 8px;
 }
-
 .tile {
     width: 70px;
     height: 70px;
-
     border: 3px solid #3a3a3c;
     background: #121213;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-
     user-select: none;
 }
 
+/* keyboard */
+#keyboard {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+.key {
+    width: 65px;
+    height: 70px;
+    border: none;
+    border-radius: 4px;
+    background: #5f6061;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.key.large {
+    width: 110px;
+}
+
+/* colors for tiles and keys*/
 .green {
     background: #538d4e;
     border-color: #538d4e;
     color: white;
 }
-
 .yellow {
     background: #b59f3b;
     border-color: #b59f3b;
     color: white;
 }
-
 .gray {
     background: #3a3a3c;
     border-color: #3a3a3c;
     color: white;
 }
 
+/* disclaimer */
 p {
     margin-top: 30px;
     color: #888;
